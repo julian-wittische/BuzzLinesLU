@@ -3,10 +3,4 @@
 # Request: Axel Hochkirch/Alexander Weigand/Balint Andrasi
 # Start: Spring 2026
 # Data: MNHNL
-# Script objective : Load environmental data
-
-############ High resolution land cover rasters
-
-############ Protected areas
-
-############ Biotopes
+# Script objective : Rasterize vector data (relevant biotopes, protected areas)

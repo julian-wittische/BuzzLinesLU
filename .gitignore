@@ -1,5 +1,7 @@
 # Custom
 config.R
+*.csv
+*.zip
 
 # History files
 .Rhistory
