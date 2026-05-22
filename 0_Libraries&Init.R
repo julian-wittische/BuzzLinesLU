@@ -1,4 +1,5 @@
 ############ Libraries
+install.packages(terra)
 library(sf)
 library(terra)
 library(ggplot2)

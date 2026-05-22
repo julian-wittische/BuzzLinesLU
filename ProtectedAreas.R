@@ -3,7 +3,7 @@
 # Request: Axel Hochkirch/Alexander Weigand/Balint Andrasi
 # Start: Spring 2026
 # Data: MNHNL
-# Script objective : Load, correctc combine protected area data from Luxembourg
+# Script objective : Load, correct combine protected area data from Luxembourg
 
 ############ Loading protected area data ----
 ####### Encoding option for sf
