@@ -11,18 +11,21 @@
 PRO_n2000_r <- rasterize(
   vect(PRO_n2000), # polygon layer to rasterize
   GRA, # base raster layer 
-  cover=TRUE
+  cover=TRUE,
+  background=0
 )
 
 PRO_zpin_r <- rasterize(
   vect(PRO_zpin), # polygon layer to rasterize
   GRA, # base raster layer 
-  cover=TRUE
+  cover=TRUE,
+  background=0
 )
 
 BTP_r <- rasterize(
     vect(BTP), # polygon layer to rasterize
     GRA, # base raster layer 
-    cover=TRUE
+    cover=TRUE,
+    background=0
 )
   

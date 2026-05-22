@@ -13,7 +13,7 @@ zip_path
 opencad <- read_sf(dsn=zip_path, layer="OBK_F")
 
 ### Only select dry habitats
-# Subset by Axel codes
+# Subset by Axel's codes
 index <- which(opencad$E_Btyp1_co %in% c("BK01", "BK02", "BK03", "BK07",
                                          "4030",
                                          "5110",
