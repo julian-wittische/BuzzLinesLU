@@ -11,16 +11,20 @@ w_GRA <- 1
 w_PRO_n2000 <- 2
 w_PRO_zpin <- 5  
 w_BTP <- 10
-######
-w_matrix <- 5# Resistance
 
-# /!\ THIS IS NOW A RESISTANCE LAYER, NOT CONUDCTANCE /!\  
-EKR <- 1/(GRA*w_GRA +
+
+# /!\ THIS IS NOW A RESISTANCE LAYER, NOT CONDUCTANCE /!\  
+ EKC <- GRA*w_GRA +
        PRO_n2000_r*w_PRO_n2000 +
        PRO_zpin_r*w_PRO_zpin +
-       BTP_r*w_BTP)
+       BTP_r*w_BTP
+
+# Adds a resistance of 10 to matrix values after the conductance to resistance conversion
+EKC <- EKC + 0.1
 
 # Set high resistance for NA cells (not covered by anything useful)
-EKR[is.na(EKR),] <- max(EKR)*w_matrix
+######
+EKR <- 1/EKC
+
 plot(EKR)
 
