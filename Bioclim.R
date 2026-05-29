@@ -1,4 +1,8 @@
                                           ###Biolclim Variables####
+
+save.image("Bioclim.R.RData") 
+load("Bioclim.R.RData")                                          
+                                          
 #Adding tiles of Land surface temperature 25m (LST)
 #Spring mean
 LST_march <- rast("C:/Temperature/march.tif")
@@ -125,3 +129,5 @@ Slope_resamp<-resample(Slope_lux, GRA, method="bilinear", threads=TRUE, by_util=
 Border_10km<-st_buffer(Border,dist = 10000)
 Slope_10km_mask <- mask(Slope_resamp, Border_10km)
 plot(Slope_10km_mask)
+
+

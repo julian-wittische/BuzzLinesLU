@@ -103,7 +103,7 @@ crs(GRA) <- "EPSG:2169"
 ext(GRA)
 plot(GRA)
 GRA_10km_mask <- mask(GRA, Border_10km) #Crop and mask Crop layer to Luxembourg borders
-plot(CROP_10km_mask)
+plot(GRA_10km_mask)
 
 #Rasters not perfectly aligned - need to align them
 CROP_lux
@@ -177,20 +177,38 @@ GRA_10km_mask
 IMP_10km_mask
 CROP_10km_mask
 FOR_10km_mask
-Elev_10km_mask
-Aspect_10km_mask
+Elev_10km_mask #?
 Aspect_southness_10km_mask #Aspect values are circular, so I converted them into a measure of "southness"
-Spring_temp_10km_mask
-spring_tempmin_10km_mask
-Summer_temp_10km_mask
+Spring_temp_10km_mask #?
+spring_tempmin_10km_mask #?
+Summer_temp_10km_mask #?
 summer_tempmax_10km_mask
 Spring_precip_10km_mask
-Summer_precip_10km_mask
+Summer_precip_10km_mask #?
 SR_spring_10km_mask
 Slope_10km_mask
 Soil_organic_resamp
 Soil_ph_resamp
 Soil_moisture_resamp
+
+#Saving rasters and calling
+writeRaster(IMP_10km_mask, "IMP_10km_mask.tif", overwrite=TRUE)
+writeRaster(GRA_10km_mask, "GRA_10km_mask.tif", overwrite=TRUE)
+writeRaster(CROP_10km_mask, "CROP_10km_mask.tif", overwrite=TRUE)
+writeRaster(FOR_10km_mask, "FOR_10km_mask.tif", overwrite=TRUE)
+writeRaster(Elev_10km_mask, "Elev_10km_mask.tif", overwrite=TRUE)
+writeRaster(Aspect_southness_10km_mask, "Aspect_southness_10km_mask.tif", overwrite=TRUE)
+writeRaster(summer_tempmax_10km_mask, "summer_tempmax_10km_mask.tif", overwrite=TRUE)
+writeRaster(Spring_precip_10km_mask, "Spring_precip_10km_mask.tif", overwrite=TRUE)
+writeRaster(SR_spring_10km_mask, "SR_spring_10km_mask.tif", overwrite=TRUE)
+writeRaster(Slope_10km_mask, "Slope_10km_mask.tif", overwrite=TRUE)
+writeRaster(Soil_organic_resamp, "Soil_organic_resamp.tif", overwrite=TRUE)
+writeRaster(Soil_ph_resamp, "Soil_ph_resamp.tif", overwrite=TRUE)
+writeRaster(Soil_moisture_resamp, "Soil_moisture_resamp.tif", overwrite=TRUE)
+IMP_10km_mask <- rast("IMP_10km_mask.tif") # Use this code to call the rasters
+
+save.image("2_EnvironmentalData.R.RData")
+load.image("2_EnvironmentalData.R.RData")
 
 ############ Protected areas
 source("ProtectedAreas.R")
