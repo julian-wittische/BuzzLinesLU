@@ -333,7 +333,7 @@ lolcont <- resist_continuous(IMP, x=c(0,45,75,95,100), y=c(10^0, 10^1, 10^2, 10^
 #GRA <- rast("C:/Users/YNM724/Desktop/BuzzLine variables/GRA_10km_mask.tif")
 lc_lookup <- data.frame(
   value      = c(0, 1),
-  resistance = c(10^3, 1)
+  resistance = c(10^4, 1)
 )
 lolcat <- resist_categorical(GRA, lookup=lc_lookup)
 
